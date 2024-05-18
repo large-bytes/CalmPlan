@@ -1,13 +1,11 @@
 // file: src/routes/Tasks.tsx
 
+import TaskList from "../components/task_list/TaskList";
+
 const tasks = () => {
   return (
     <>
-      <ul>
-        <li>note 1</li>
-        <li>note 2</li>
-        <li>note 3</li>
-      </ul>
+      <TaskList />
     </>
   );
 };

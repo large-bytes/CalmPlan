@@ -1,10 +1,15 @@
 // file: src/components/task_list/TaskList.tsx
-import mockTasks from "../../assets/mockTasks.js";
+
+import { TaskProps } from "../../assets/mockTasks.ts";
 import Task from "./Task.js";
 
-const TaskList = () => {
+type TaskListProps = {
+  tasks: TaskProps[];
+};
+
+const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
   return (
-    <ul>{mockTasks && mockTasks.map((task) => <Task name={task.name} />)}</ul>
+    <ul>{tasks && tasks.map((task) => <Task key={task.id} {...task} />)}</ul>
   );
 };
 

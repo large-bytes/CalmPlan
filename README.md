@@ -1,3 +1,5 @@
+<img alt="Calm Plan Logo" width=150pz src="https://github.com/large-bytes/CalmPlan/assets/19231569/2f5874f0-28c3-4af8-ad97-76e90d3489f2" />
+
 # CalmPlan
 
 Make a task list and prioritise your work without getting overwhelmed.

@@ -1,6 +1,6 @@
 # CalmPlan
 
-Make a list and prioritise your work without getting overwhelmed 
+Make a task list and prioritise your work without getting overwhelmed.
 
 ## Features
 
@@ -35,17 +35,17 @@ Make a list and prioritise your work without getting overwhelmed
 - Login token lasts for 1 week?
 
 ### API 
-User
-Email PK
+#### User
+- Email PK
 
-Task
-Id PK
-Title
-Details
-Priority
-UserEmail FK
+#### Task
+- Id PK
+- Title
+- Details
+- Priority
+- UserEmail FK
 
-Tasks Table (JOIN TABLE)
-UserEmail - TaskId
+#### Tasks Table (JOIN TABLE)
+- UserEmail - TaskId
 
 

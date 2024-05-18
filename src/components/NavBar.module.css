@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

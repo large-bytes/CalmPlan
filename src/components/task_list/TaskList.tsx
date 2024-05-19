@@ -8,8 +8,20 @@ type TaskListProps = {
 };
 
 const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
+  const isMoreThan5 = tasks.length > 5;
+  let formattedTasks = tasks;
+  if (isMoreThan5) {
+    formattedTasks = tasks.slice(-5);
+  }
+
   return (
-    <ul>{tasks && tasks.map((task) => <Task key={task.id} {...task} />)}</ul>
+    <>
+      {isMoreThan5 && <p>...</p>}
+      <ul>
+        {formattedTasks &&
+          formattedTasks.map((task) => <Task key={task.id} {...task} />)}
+      </ul>
+    </>
   );
 };
 

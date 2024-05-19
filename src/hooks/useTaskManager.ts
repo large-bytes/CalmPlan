@@ -7,17 +7,26 @@ import mockTasks, { TaskProps } from "../assets/mockTasks";
 export const useTaskManager = () => {
   const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
 
-  const handleAddTask = (taskInput: HTMLInputElement | null) => {
-    // exit if the input doesn't exist or is only whitespace
-    if (!taskInput || !taskInput.value.trim()) return;
+  const handleAddTask = (event: React.FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
+
+    const form = event.currentTarget; // Access the form element
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const details = formData.get("details") as string;
+    const priority = formData.get("priority") as string;
+
+    if (!name.trim()) return; // Ensure there's a name at least
 
     const newTask: TaskProps = {
       id: uuid(),
-      name: taskInput.value.trim(),
+      name,
+      details,
+      priority,
     };
 
     setTasks((prevTasks) => [...prevTasks, newTask]);
-    taskInput.value = "";
+    form.reset();
   };
 
   return { tasks, handleAddTask };

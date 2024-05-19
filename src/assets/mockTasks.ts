@@ -1,6 +1,8 @@
 export type TaskProps = {
   id: string;
   name: string;
+  details?: string;
+  priority?: string;
 };
 
 const mockTasks: TaskProps[] = [

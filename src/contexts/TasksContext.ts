@@ -5,7 +5,7 @@ import { TaskProps } from "../assets/mockTasks";
 
 type TasksContextType = {
   tasks: TaskProps[];
-  handleAddTask: (taskInput: HTMLInputElement) => void;
+  handleAddTask: (event: React.FormEvent<HTMLFormElement>) => void;
 };
 
 // create Tasks context

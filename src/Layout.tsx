@@ -14,12 +14,12 @@ const Layout = () => {
   const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
 
   const handleAddTask = (taskInput: HTMLInputElement | null) => {
-    const inputValue = taskInput?.value;
-    if (!inputValue || inputValue?.trim() === "") return;
+    // exit if the input doesn't exist or is only whitespace
+    if (!taskInput || !taskInput.value.trim()) return;
 
     const newTask: TaskProps = {
       id: uuid(),
-      name: inputValue,
+      name: taskInput.value.trim(),
     };
 
     setTasks((prevTasks) => [...prevTasks, newTask]);

@@ -1,30 +1,13 @@
 // file: src/Layout.tsx
 
 import { Outlet } from "react-router-dom";
-import { useState } from "react";
-import { v4 as uuid } from "uuid";
 import Navbar from "./components/Navbar";
-
 import styles from "./Layout.module.css";
-import mockTasks from "./assets/mockTasks";
-import { TaskProps } from "./assets/mockTasks";
 import { TasksContext } from "./contexts/TasksContext";
+import { useTaskManager } from "./hooks/useTaskManager";
 
 const Layout = () => {
-  const [tasks, setTasks] = useState<TaskProps[]>(mockTasks);
-
-  const handleAddTask = (taskInput: HTMLInputElement | null) => {
-    // exit if the input doesn't exist or is only whitespace
-    if (!taskInput || !taskInput.value.trim()) return;
-
-    const newTask: TaskProps = {
-      id: uuid(),
-      name: taskInput.value.trim(),
-    };
-
-    setTasks((prevTasks) => [...prevTasks, newTask]);
-    taskInput.value = "";
-  };
+  const { tasks, handleAddTask } = useTaskManager();
 
   return (
     <div className={styles.container}>

@@ -1,25 +1,74 @@
 // file: src/components/task_form/TaskForm.tsx
-
 import { useTasks } from "../../contexts/TasksContext";
+import styles from "./TaskForm.module.css";
 
 const TaskForm = () => {
   const { handleAddTask } = useTasks();
 
   return (
-    <form onSubmit={handleAddTask}>
+    <form className={styles.form} onSubmit={handleAddTask}>
       <label htmlFor="name">Title</label>
-      <br />
-      <input type="text" name="name" id="name" />
-      <br />
+      <input className={styles.formInput} type="text" name="name" id="name" />
       <label htmlFor="details">Details</label>
-      <br />
-      <input type="text" name="details" id="details" />
-      <br />
-      <label htmlFor="priority">Priority</label>
-      <br />
-      <input type="text" name="priority" id="priority" />
-      <br />
-      <input type="submit" value="Add Task" />
+      <textarea
+        className={styles.formInput}
+        rows={4}
+        name="details"
+        id="details"
+      />
+      <label>Priority</label>
+      <label htmlFor="one">
+        One
+        <input
+          className={styles.formInput}
+          type="radio"
+          name="priority"
+          id="one"
+          value="one"
+        />
+      </label>
+      <label htmlFor="two">
+        Two
+        <input
+          className={styles.formInput}
+          type="radio"
+          name="priority"
+          id="two"
+          value="two"
+        />
+      </label>
+      <label htmlFor="three">
+        Three
+        <input
+          className={styles.formInput}
+          type="radio"
+          name="priority"
+          id="three"
+          value="three"
+        />
+      </label>
+      <label htmlFor="four">
+        Four
+        <input
+          className={styles.formInput}
+          type="radio"
+          name="priority"
+          id="four"
+          value="four"
+        />
+      </label>
+
+      <label htmlFor="five">
+        Five
+        <input
+          className={styles.formInput}
+          type="radio"
+          name="priority"
+          id="five"
+          value="five"
+        />
+      </label>
+      <input className={styles.formSubmit} type="submit" value="Add Task" />
     </form>
   );
 };

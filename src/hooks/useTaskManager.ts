@@ -12,6 +12,7 @@ export const useTaskManager = () => {
 
     const form = event.currentTarget; // Access the form element
     const formData = new FormData(event.currentTarget);
+
     const name = formData.get("name") as string;
     const details = formData.get("details") as string;
     const priority = formData.get("priority") as string;

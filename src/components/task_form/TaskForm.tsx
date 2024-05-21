@@ -1,9 +1,15 @@
 // file: src/components/task_form/TaskForm.tsx
+import { useState } from "react";
 import { useTasks } from "../../contexts/TasksContext";
 import styles from "./TaskForm.module.css";
 
 const TaskForm = () => {
   const { handleAddTask } = useTasks();
+  const [selectedPriority, setSelectedPriority] = useState("");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedPriority(event.target.value);
+  };
 
   return (
     <form className={styles.form} onSubmit={handleAddTask}>
@@ -17,57 +23,27 @@ const TaskForm = () => {
         id="details"
       />
       <label>Priority</label>
-      <label htmlFor="one">
-        One
-        <input
-          className={styles.formInput}
-          type="radio"
-          name="priority"
-          id="one"
-          value="one"
-        />
-      </label>
-      <label htmlFor="two">
-        Two
-        <input
-          className={styles.formInput}
-          type="radio"
-          name="priority"
-          id="two"
-          value="two"
-        />
-      </label>
-      <label htmlFor="three">
-        Three
-        <input
-          className={styles.formInput}
-          type="radio"
-          name="priority"
-          id="three"
-          value="three"
-        />
-      </label>
-      <label htmlFor="four">
-        Four
-        <input
-          className={styles.formInput}
-          type="radio"
-          name="priority"
-          id="four"
-          value="four"
-        />
-      </label>
-
-      <label htmlFor="five">
-        Five
-        <input
-          className={styles.formInput}
-          type="radio"
-          name="priority"
-          id="five"
-          value="five"
-        />
-      </label>
+      <div className={styles.priorityContainer}>
+        {["one", "two", "three", "four", "five"].map((priority, index) => (
+          <label
+            className={`${styles.label} ${
+              selectedPriority === priority ? styles.selected : ""
+            }`}
+            htmlFor={priority}
+          >
+            <input
+              className={`${styles.formInput} ${styles.visuallyHidden}`}
+              type="radio"
+              name="priority"
+              id={priority}
+              value={priority}
+              onChange={handleChange}
+              checked={selectedPriority === priority}
+            />
+            <span>{["😴", "😌", "😐", "😰", "😱"][index]}</span>
+          </label>
+        ))}
+      </div>
       <input className={styles.formSubmit} type="submit" value="Add Task" />
     </form>
   );

@@ -1,3 +1,4 @@
+/* TaskForm.module.css */
 .form {
   display: flex;
   flex-direction: column;
@@ -14,5 +15,39 @@
 }
 
 .formSubmit {
-    margin-top: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.priorityContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.label {
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 3px;
+  scale: 1;
+  opacity: 0.4;
+}
+
+/* highlight the option label in focus */
+.label:focus-within {
+  outline: 2px solid #015ecc;
+  scale: 1.2;
+  opacity: 1;
+}
+
+/* style the checked radio button label */
+.selected {
+  scale: 1.2;
+  opacity: 1;
+}
+
+/* hide the default radio buttons */
+.visuallyHidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }

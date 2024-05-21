@@ -1,7 +1,7 @@
 // file: src/components/task_list/TaskList.tsx
-
-import { TaskProps } from "../../assets/mockTasks.ts";
-import Task from "./Task.js";
+import { TaskProps } from "../../../assets/mockTasks.ts";
+import Task from "../Task/Task.js";
+import styles from "./TaskList.module.css";
 
 type TaskListProps = {
   tasks: TaskProps[];
@@ -16,8 +16,8 @@ const TaskList: React.FC<TaskListProps> = ({ tasks }) => {
 
   return (
     <>
-      {isMoreThan3 && <p>...</p>}
-      <ul>
+      {isMoreThan3 && <p className={styles.elipsis}>. . .</p>}
+      <ul className={styles.list}>
         {formattedTasks &&
           formattedTasks.map((task) => <Task key={task.id} {...task} />)}
       </ul>

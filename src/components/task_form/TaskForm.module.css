@@ -17,6 +17,7 @@
 
 .formSubmit {
   padding: 5px;
+  color: var(--black);
 }
 
 .priorityContainer {

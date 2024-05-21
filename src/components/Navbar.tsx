@@ -11,13 +11,13 @@ const Navbar = () => {
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
           to="/"
         >
-          Home
+          List
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
           to="/tasks"
         >
-          Tasks
+          Add
         </NavLink>
       </ul>
     </nav>

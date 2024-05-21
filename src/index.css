@@ -1,5 +1,7 @@
 :root {
+  --black: rgb(45, 45, 45);
   font-family: "Carlito", sans-serif;
+  color: var(--black);
 }
 
 *,

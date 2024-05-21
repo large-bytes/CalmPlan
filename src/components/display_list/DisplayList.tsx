@@ -21,7 +21,7 @@ const DisplayList = () => {
     <ul>
       {tasks &&
         tasks.map((task) => (
-          <li className={`${styles.listItem} ${getStyle(task.priority)}`}>
+          <li key={task.id} className={`${styles.listItem} ${getStyle(task.priority)}`}>
             {task.name}
           </li>
         ))}

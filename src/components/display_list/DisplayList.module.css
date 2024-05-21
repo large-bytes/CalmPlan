@@ -1,12 +1,12 @@
 .listItem {
-    margin: 10px 0;
+  margin: 10px 0;
 }
-.one {
+.five {
   font-size: 1.4rem;
   font-weight: 900;
   color: #2f3e46;
 }
-.two {
+.four {
   font-size: 1.2rem;
   font-weight: 700;
   color: #354f52;
@@ -16,12 +16,12 @@
   font-weight: 500;
   color: #52796f;
 }
-.four {
+.two {
   font-size: 0.8rem;
   font-weight: 400;
   color: #84a98c;
 }
-.five {
+.one {
   font-size: 0.6rem;
   font-weight: 300;
   color: #cad2c5;

@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <div className={styles.container}>
       <div className={styles.nav_container}>
-        <h1 className={styles.logo}>CalmPlan</h1>
+        <h1 className={styles.logo}>CalmPlan [BETA]</h1>
         <Navbar />
       </div>
       <main className={styles.main}>
